@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/constants/colors.dart';
-import 'package:my_portfolio/styles/style.dart';
-import 'package:my_portfolio/widgets/header_desktop.dart';
-import 'package:my_portfolio/widgets/header_mobile.dart';
-import 'package:my_portfolio/widgets/site_logo.dart';
+import '/constants/colors.dart';
+import '/widgets/header_mobile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -23,6 +20,9 @@ class _HomePageState extends State<HomePage> {
           //MAIN
           //HeaderDesktop(),
           HeaderMobile(
+            onLogoTap: () {
+              debugPrint(" - times Logo Tapped");
+            },
             onMenuTap: () {
               debugPrint(" - times Menu Tapped");
             },
