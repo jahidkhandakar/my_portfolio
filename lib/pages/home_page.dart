@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/colors.dart';
-import 'package:my_portfolio/constants/nav_items.dart';
+import 'package:my_portfolio/styles/style.dart';
+import 'package:my_portfolio/widgets/header_desktop.dart';
+import 'package:my_portfolio/widgets/header_mobile.dart';
+import 'package:my_portfolio/widgets/site_logo.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -18,45 +21,11 @@ class _HomePageState extends State<HomePage> {
         scrollDirection: Axis.vertical,
         children: [
           //MAIN
-          Container(
-            height: 60,
-            width: double.maxFinite,  
-            margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            decoration: BoxDecoration(
-              gradient: LinearGradient(colors: [
-                Colors.transparent,
-                CustomColor.backgroundLight1,
-              ]),
-              borderRadius: BorderRadius.circular(100)
-            ),
-            child: Row(
-              children: [
-                Text(
-                  "Khandakar Jahidul Islam",
-                  style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                    color: CustomColor.deepSecondary,
-                  ),
-                ),
-                Spacer(),
-                for(int i=0; i<navItems.length; i++)
-                  Padding(
-                    padding: const EdgeInsets.only(right: 20.0),
-                    child: TextButton(
-                      onPressed: ()=>{}, 
-                      child: Text(
-                        navItems[i],
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                          color: CustomColor.lightPrimary,
-                        ),
-                      )
-                    ),
-                  ),
-              ],
-            ),
+          //HeaderDesktop(),
+          HeaderMobile(
+            onMenuTap: () {
+              debugPrint(" - times Menu Tapped");
+            },
           ),
           //SKILLS
           Container(
